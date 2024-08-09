@@ -51,7 +51,7 @@ ShowFJSpectrum(ZZ_FC,f,velocity,savepath = savePath,subname = 'ER0', maxPeriod =
 #   do the MFJ transform for RZ component  
 RZ_FC =ccfj.fj_noise_v2(RZ,[],r,velocity,f,tag = 'RZ',itype = 0,func=MFJ)
 #   do the MFJ transform for ZR component
-ZR_FC =-ccfj.fj_noise_v2(ZR,[],r,velocity,f,tag = 'ZR',itype = 0,func=MFJ)
+ZR_FC =-ccfj.fj_noise_v2(ZR,[],r,velocity,f,tag = 'RZ',itype = 0,func=MFJ)
 ShowFJSpectrum(np.abs(RZ_FC + ZR_FC),f,velocity,savepath = savePath,subname = 'ER1', maxPeriod = maxPeriod,theoreticalfile = Rayleighdispfile)     
 
 #   do the MFJ transform for RR-TT component for Rayleigh wave
