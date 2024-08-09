@@ -754,7 +754,7 @@ def fj_noise_v2(uf1,uf2,r,c,f,
             #    indata[:,ii] = indata[:,ii]/max(np.abs(indata[:,ii]))
             out2 = fY0(indata,r,c,f,fstride,itype)
             out = out1 - out2
-        if tag == 'RZ' or tag == 'ZR':
+        if tag == 'RZ':
             indata = np.array(uf1,dtype=np.float32)
             #for ii in range(len(f)):
             #    indata[:,ii] = indata[:,ii]/max(np.abs(indata[:,ii]))
@@ -892,7 +892,6 @@ def fj_earthquake(u,r,c,f,fstride=1,itype=1,func=0,num=-1):
         outr = fhr(ufr,r,c,f,fstride,itype) - fhi(ufi,r,c,f,fstride,itype)
         outi = fhr(ufi,r,c,f,fstride,itype) + fhi(ufr,r,c,f,fstride,itype)
         out = np.sqrt(outr**2+outi**2)
-        #out = outi
     else:
         print('set func as 0 for Bessel function 1 for Hankel function')
         return 0
